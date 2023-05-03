@@ -4,6 +4,18 @@ import string
 from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
+from nltk.tokenizers import punkt
+
+import nltk
+
+def init_nltk():
+    try:
+        nltk.data.find('punkt')
+    except LookupError:
+        nltk.download('punkt')
+init_nltk()
+
+
 
 ps = PorterStemmer()
 
